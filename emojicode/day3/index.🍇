@@ -1,0 +1,92 @@
+📦 files 🏠
+
+💭 define a value type that can determine character scores
+🕊 💳 🍇
+  💭 define the initializer (i.e. constructor)
+  🆕 🍇🍉
+
+  💭 converts a character to its character code, and returns its score
+  ❗ 📕 character 🔡 ➡️ 🔢 🍇
+    -96 ➡️ 🖍️🆕code_offset
+    0 ➡️ 🖍️🆕priority_offset
+
+    💭 check if it's uppercase by just converting it to uppercase and checking
+    💭 if the two characters are the same
+    📫character ❗ ➡️ upper_case
+    ↪️ character 🙌 upper_case 🍇
+      -64 ➡️ 🖍️code_offset
+      26 ➡️ 🖍️priority_offset
+    🍉
+
+    📇character ❗️ ➡️ c_data
+    🐽c_data 0 ❗️ ➡️ c_byte
+    🔢c_byte ❗️ ➡️ c_code
+    ↩️ c_code ➕ code_offset ➕ priority_offset
+  🍉
+🍉
+
+🏁 🍇
+  🍺📇🐇📄 🔤./input.txt🔤 ❗ ➡ file
+	🍺🔡file ❗ ➡ text
+	🔫text 🔤❌n🔤❗ ➡ lines
+
+  0 ➡️ 🖍🆕answer_one
+  0 ➡️ 🖍🆕answer_two
+
+  🆕💳 ❗ ➡️ scorer
+
+  💭 part 1
+  🔂 line lines 🍇
+    📐line ❗ ➡️ length
+    ↪️ length ▶️ 0 🍇
+      🎶🔪line 0 🤜 length ➗ 2 🤛 ❗ ❗ ➡️ first_half
+      🔪line 🤜 length ➗ 2 🤛 length ❗ ➡️ second_half
+
+      👎 ➡️ 🖍️🆕break
+      0 ➡️ 🖍️🆕i
+      🔁 i ◀️ 📏first_half ❓ 🤝 ❎break ❗ 🍇
+        🐽first_half i ❗ ➡️ char
+        🔍second_half char ❗ ➡️ index
+        💭 check if <optional> has some value
+        ↪️ ❎ index 🙌 🤷‍♀️ ❗ 🍇
+          answer_one ⬅️➕ 📕scorer char ❗
+
+          💭 break
+          👍 ➡️ 🖍️break
+        🍉
+
+        i ⬅️➕ 1
+      🍉
+    🍉
+  🍉
+
+  💭 part 2
+  0 ➡️ 🖍️🆕i
+  🔁 i ◀️ 📏lines ❓➖1 🍇
+    🎶🐽lines i ❗ ❗ ➡️ line1
+    🐽lines i➕1 ❗ ➡️ line2
+    🐽lines i➕2 ❗ ➡️ line3
+
+    👎 ➡️ 🖍️🆕break
+    0 ➡️ 🖍️🆕j
+    🔁 j ◀️ 📏line1 ❓ 🤝 ❎break ❗ 🍇
+      🐽line1 j ❗ ➡️ char
+      🔍line2 char ❗ ➡️ index
+      💭 check if <optional> has some value
+      ↪️ ❎ index 🙌 🤷‍♀️ ❗ 🍇
+        🔍line3 char ❗ ➡️ index2
+        ↪️ ❎ index2 🙌 🤷‍♀️ ❗ 🍇
+          answer_two ⬅️➕ 📕scorer char ❗
+
+          💭 break
+          👍 ➡️ 🖍️break
+        🍉
+      🍉
+      j ⬅️➕ 1
+    🍉
+    i ⬅️➕ 3
+  🍉
+
+  😀 🔤🧲answer_one🧲🔤 ❗
+  😀 🔤🧲answer_two🧲🔤 ❗
+🍉

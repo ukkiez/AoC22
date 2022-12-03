@@ -1,0 +1,30 @@
+🕊 💳 🍇
+  💭 define the initializer (i.e. constructor)
+  🆕 🍇🍉
+
+  💭 converts a character to its character code, and returns its score
+  ❗ 📕 character 🔡 ➡️ 🔢 🍇
+    -96 ➡️ 🖍️🆕 code_offset
+    0 ➡️ 🖍️🆕 priority_offset
+
+    💭 check if it's uppercase by just converting it to uppercase and checking
+    💭 if the two characters are the same
+    📫 character ❗ ➡️ upper_case
+    ↪️ character 🙌 upper_case 🍇
+      -64 ➡️ 🖍️ code_offset
+      26 ➡️ 🖍️ priority_offset
+    🍉
+
+    📇 character ❗️ ➡️ c_data
+    🐽 c_data 0 ❗️ ➡️ c_byte
+    🔢 c_byte ❗️ ➡️ c_code
+    ↩️ c_code ➕ code_offset ➕ priority_offset
+  🍉
+🍉
+
+🏁 🍇
+  🆕💳 ❗ ➡️ scorer
+
+  📕 scorer 🔤z🔤 ❗ ➡️ score
+  😀 🔤 🧲 score 🧲 🔤 ❗
+🍉

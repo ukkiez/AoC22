@@ -1,0 +1,7 @@
+emojicode/packages
+emojicode/include
+emojicode/emojicodec
+emojicode/install.sh
+node_modules
+
+.DS_Store
