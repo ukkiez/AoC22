@@ -1,8 +1,8 @@
 const InputParser = require( "../InputParser.js" );
 
 const main = async () => {
-  let answer1;
-  let answer2;
+  let answer1 = 0;
+  let answer2 = 0;
 
   const parser = await InputParser.init( __dirname, "./input.txt" );
 

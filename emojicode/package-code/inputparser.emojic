@@ -1,0 +1,88 @@
+📦 files 🏠
+
+💭 define a class that will manage input lines
+🌍 🐇 📁 🍇
+  🖍🆕 filepath 🔡
+  🖍🆕 list 🍨🐚🔡🍆 ⬅️ 🍿🍆
+  🖍🆕 group_int 🍨🐚🍨🐚🔢🍆🍆 ⬅️ 🍿🍆
+
+  💭 define the initializer (i.e. constructor)
+  🆕 🍼 filepath 🔡 🍇
+    💭 load content as binary data
+    🍺📇🐇📄 filepath❗️ ➡️ bin
+
+    💭 convert binary data to UTF-8 string
+    🍺🔡bin❗️ ➡️ str
+
+    💭 split string at \n
+    🔫str 🔤❌n🔤❗️ ➡️ 🖍🆕lines
+
+    💭 remove the last new line
+    🐼lines❗️
+
+    lines ➡️ 🖍️list
+  🍉
+
+  💭 get the list of lines as strings
+  ❗️ 📓 ➡️ 🍨🐚🔡🍆 🍇
+    ↩️ list
+  🍉
+
+  💭 get the groups of integers; if it doesn't exist yet, convert the string
+  💭 list we already have to groups of integers, grouped by every encountered
+  💭 new line
+  ❗️ 📔 ➡️ 🍨🐚🍨🐚🔢🍆🍆 🍇
+    ↪️ 📏group_int ❓ ▶ 0 🍇
+      ↩️ group_int
+    🍉
+
+    🖍🆕 groups 🍨🐚🍨🐚🔢🍆🍆
+    🖍️🆕 current_group 🍨🐚🔢🍆
+    💭 note: the compiler doesn't understand nested lists apparently, so to
+    💭 avoid a warning of an "ambiguous type", make this a single empty list
+    💭 initially
+    🍿🍆 ➡️ 🖍️ groups
+    🍿🍆 ➡️ 🖍️ current_group
+
+    💭 map every line to an integer
+    🔂 line list 🍇
+      📐line ❗ ➡️ length
+      ↪️ length ▶️ 0 🍇
+        💭 TODO: implement custom error handling here in case converting the
+        💭 string to an integer fails
+        🐻current_group 🍺🔢line 10 ❗️ ❗
+      🍉
+      🙅 🍇
+        🐻groups current_group ❗
+        🍿🍆 ➡️ 🖍️current_group
+      🍉
+    🍉
+
+    💭 don't forget to include the last group, which we wouldn't have pushed yet
+    💭 since the input textfile doesn't have a new line at the end
+    🐻groups current_group ❗
+    🍿🍆 ➡️ 🖍️current_group
+
+    groups ➡️ 🖍️group_int
+    ↩️ group_int
+  🍉
+🍉
+
+💭 🏁🍇 🍉
+
+💭 example usage
+🏁🍇
+  🆕📁 🔤test.txt🔤 ❗ ➡️ input_parser
+  📔input_parser ❗ ➡️ integer_list
+  💭 🔂 group integer_list 🍇
+  💭   😀 🔤 --- NEW GROUP --- 🔤 ❗
+  💭   🔂 element group 🍇
+  💭     😀 🔤 🧲element🧲 🔤 ❗
+  💭   🍉
+  💭 🍉
+
+  💭 📓input_parser ❗ ➡️ list
+  💭 🔂 element list 🍇
+  💭   😀 🔤 🧲element🧲 🔤 ❗
+  💭 🍉
+🍉
