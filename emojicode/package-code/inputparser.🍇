@@ -70,8 +70,24 @@
   💭 iterate over the lines, and execute "func" on each of them; see "callables"
   💭 in the documentation
   ❗️ 🏃 func🍇🔡🍉 🍇
-    🔂 element list 🍇
-      ⁉️ func element❗️
+    🔂 line list 🍇
+      ⁉️ func line❗️
+    🍉
+  🍉
+
+  💭 same as 🏃, as integers OR no values
+  ❗️ 🏃‍♀️ func🍇🍬🔢👌🍉 🍇
+    🔂 line list 🍇
+      🔢line 10❗ ➡ line_int
+      💭 check if it has a value after attempting to cast the line to an int
+      ↪️ ❎ line_int 🙌 🤷‍♀️ ❗ 🍇
+        ⁉️ func 🍺line_int 👍❗️
+      🍉
+      🙅 🍇
+        💭 call the function without unwrapping the empty optional, and indicate
+        💭 it with the second boolean argument
+        ⁉️ func line_int 👎❗️
+      🍉
     🍉
   🍉
 🍉
@@ -98,5 +114,15 @@
   💭 💭 iterate over all the lines
   💭 🏃input_parser 🍇 line🔡
   💭   😀 🔤 🧲line🧲 🔤 ❗
+  💭 🍉❗️
+
+  💭 💭 iterate over all the lines
+  💭 🏃‍♀️input_parser 🍇 line🍬🔢 is_int👌
+  💭   ↪️ is_int 🍇
+  💭     😀 🔤 🧲🍺line🧲 🔤 ❗
+  💭   🍉
+  💭   🙅 🍇
+  💭     😀 🔤 New Line 🔤 ❗
+  💭   🍉
   💭 🍉❗️
 💭 🍉

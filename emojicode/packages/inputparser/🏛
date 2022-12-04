@@ -12,8 +12,22 @@
   🍉
   🔓❗️ 📔 ➡️ 🍨🐚🍨🐚🔢🍆🍆
   🥯 🔓❗️ 🏃 func 🍇🔡🍉 ➡️ ◼️ 🍇
-    🔂 element list 🍇
-      ⁉️ func element❗️
+    🔂 line list 🍇
+      ⁉️ func line❗️
+    🍉
+  🍉
+  🥯 🔓❗️ 🏃‍♀ func 🍇🍬🔢👌🍉 ➡️ ◼️ 🍇
+    🔂 line list 🍇
+      🔢line 10❗ ➡ line_int
+      💭 check if it has a value after attempting to cast the line to an int
+      ↪️ ❎ line_int 🙌 🤷‍♀️ ❗ 🍇
+        ⁉️ func 🍺line_int 👍❗️
+      🍉
+      🙅 🍇
+        💭 call the function without unwrapping the empty optional, and indicate
+        💭 it with the second boolean argument
+        ⁉️ func line_int 👎❗️
+      🍉
     🍉
   🍉
 🍉

@@ -23,20 +23,16 @@
 
   💭 defines a "Type Method", which essentially means we don't need to create an
   💭 instance of this class! We can call this with: 📓🕊💳❗️
-  🐇❗️ 📓  ➡️ 🍨🐚⚪️🍆 🍇
+  🐇❗️ 📓  ➡️ 🍨🐚🔡🍆 🍇
     ↩️ 🍿 🔤Foo🔤 🔤Bar🔤 🔤Baz🔤 🍆
   🍉
 🍉
 
-💭 define a generic type (don't confuse the syntax with a list, because here
-💭 we're not using 🍨), which we'll determine when creating the instance type
-🐇 🎁 🐚T⚪️🍆 🍇
-  🖍🆕 element_type T
+🐇 🎁 🍇
+  🆕 🍇🍉
 
-  🆕 🍼 element_type T 🍇🍉
-
-  ❗️ 🎉 ➡️ T 🍇
-    ↩️ element_type
+  ❗️ 🎉 🐚T⚪🍆️ ➡️ T 🍇
+    ↩️ 🔤foo🔤
   🍉
 🍉
 
@@ -67,11 +63,10 @@
 
   📓🕊💳❗️ ➡️ list
   🔂 element list 🍇
-    💭 😀 🔤 🧲 🔲element 🔡 ❗ 🧲 🔤 ❗
+    😀 🔤 🧲 element 🧲 🔤 ❗
   🍉
 
-  💭 determine the generic type here, with 🐚🔡🍆
-  🆕🎁 🐚🔡🍆 🔤Been wishin' for you🔤❗ ➡️ box
-  🎉box ❗ ➡️ surprise
-  😀 🔤 🧲 surprise 🧲 🔤 ❗
+  🆕🎁 ❗ ➡️ box
+  🎉🐚🔡🍆box ❗ ➡️ foo
+  😀 🔤 🧲 📫foo ❗ 🧲 🔤 ❗
 🍉
