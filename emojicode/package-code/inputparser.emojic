@@ -66,14 +66,23 @@
     groups ➡️ 🖍️group_int
     ↩️ group_int
   🍉
+
+  💭 iterate over the lines, and execute "func" on each of them; see "callables"
+  💭 in the documentation
+  ❗️ 🏃 func🍇🔡🍉 🍇
+    🔂 element list 🍇
+      ⁉️ func element❗️
+    🍉
+  🍉
 🍉
 
-💭 🏁🍇 🍉
+🏁🍇 🍉
 
 💭 example usage
-🏁🍇
-  🆕📁 🔤test.txt🔤 ❗ ➡️ input_parser
-  📔input_parser ❗ ➡️ integer_list
+💭 🏁🍇
+  💭 🆕📁 🔤test.txt🔤 ❗ ➡️ input_parser
+
+  💭 📔input_parser ❗ ➡️ integer_list
   💭 🔂 group integer_list 🍇
   💭   😀 🔤 --- NEW GROUP --- 🔤 ❗
   💭   🔂 element group 🍇
@@ -85,4 +94,9 @@
   💭 🔂 element list 🍇
   💭   😀 🔤 🧲element🧲 🔤 ❗
   💭 🍉
-🍉
+
+  💭 💭 iterate over all the lines
+  💭 🏃input_parser 🍇 line🔡
+  💭   😀 🔤 🧲line🧲 🔤 ❗
+  💭 🍉❗️
+💭 🍉
