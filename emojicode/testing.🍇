@@ -20,6 +20,24 @@
     🔢 c_byte ❗️ ➡️ c_code
     ↩️ c_code ➕ code_offset ➕ priority_offset
   🍉
+
+  💭 defines a "Type Method", which essentially means we don't need to create an
+  💭 instance of this class! We can call this with: 📓🕊💳❗️
+  🐇❗️ 📓  ➡️ 🍨🐚⚪️🍆 🍇
+    ↩️ 🍿 🔤Foo🔤 🔤Bar🔤 🔤Baz🔤 🍆
+  🍉
+🍉
+
+💭 define a generic type (don't confuse the syntax with a list, because here
+💭 we're not using 🍨), which we'll determine when creating the instance type
+🐇 🎁 🐚T⚪️🍆 🍇
+  🖍🆕 element_type T
+
+  🆕 🍼 element_type T 🍇🍉
+
+  ❗️ 🎉 ➡️ T 🍇
+    ↩️ element_type
+  🍉
 🍉
 
 🏁 🍇
@@ -27,4 +45,33 @@
 
   📕 scorer 🔤z🔤 ❗ ➡️ score
   😀 🔤 🧲 score 🧲 🔤 ❗
+
+  💭 define a "closure", which is essentially like a function
+  🍇 foo 🔡➡️🔢
+    ↩️ 1
+  🍉 ➡️ get_score
+
+  0 ➡️ 🖍️🆕i
+  🔁 i ◀️ 1 🍇
+    💭 define another closure, though inside code blocks they require 🎍🥡 after
+    💭 the grapes to escape it
+    🍇🎍🥡 foo 🔡➡️🔢
+      ↩️ 1
+    🍉 ➡️ get_score_escaped
+
+    ⁉️ get_score 🔤foo🔤 ❗️ ➡️ num
+
+    😀 🔤 🧲 num 🧲 🔤 ❗
+    i ⬅️➕ 1
+  🍉
+
+  📓🕊💳❗️ ➡️ list
+  🔂 element list 🍇
+    💭 😀 🔤 🧲 🔲element 🔡 ❗ 🧲 🔤 ❗
+  🍉
+
+  💭 determine the generic type here, with 🐚🔡🍆
+  🆕🎁 🐚🔡🍆 🔤Been wishin' for you🔤❗ ➡️ box
+  🎉box ❗ ➡️ surprise
+  😀 🔤 🧲 surprise 🧲 🔤 ❗
 🍉
