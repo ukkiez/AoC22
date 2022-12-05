@@ -4,7 +4,7 @@ const main = async () => {
   let answer1;
   let answer2;
 
-  const parser = await InputParser.init( __dirname, "./input.txt", true );
+  const parser = await InputParser.init( __dirname, "./input.txt", true, true );
 
   // part 1
   answer1 = 0;

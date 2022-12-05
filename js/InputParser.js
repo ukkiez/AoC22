@@ -17,44 +17,48 @@ class InputParser {
   groups = new Map();
   data = "";
   _linesAsNumbers = false;
+  _getGroups = false;
 
-  constructor( data, lines, _linesAsNumbers = false ) {
+  constructor( data, lines, _linesAsNumbers = false, _getGroups = false ) {
     this.data = data;
     this.lines = lines;
     this._linesAsNumbers = _linesAsNumbers;
+    this._getGroups = _getGroups;
 
-    let _groupIndex = 0;
-    let _emptyLine = false;
-    this.groups.set( _groupIndex, [] );
-    for ( const line of lines ) {
-      if ( !line ) {
-        if ( _emptyLine ) {
-          // bar against multiple empty lines in a row, in which case we
-          // wouldn't want to create multiple empty groups
+    if ( _getGroups ) {
+      let _groupIndex = 0;
+      let _emptyLine = false;
+      this.groups.set( _groupIndex, [] );
+      for ( const line of lines ) {
+        if ( !line ) {
+          if ( _emptyLine ) {
+            // bar against multiple empty lines in a row, in which case we
+            // wouldn't want to create multiple empty groups
+            continue;
+          }
+
+          _groupIndex++;
+          this.groups.set( _groupIndex, [] );
+
+          _emptyLine = true;
           continue;
         }
 
-        _groupIndex++;
-        this.groups.set( _groupIndex, [] );
+        if ( _emptyLine ) {
+          _emptyLine = false;
+        }
 
-        _emptyLine = true;
-        continue;
+        this.groups.get( _groupIndex ).push( _linesAsNumbers ? parseInt( line, 10 ) : line );
       }
 
-      if ( _emptyLine ) {
-        _emptyLine = false;
+      if ( !this.groups.get( _groupIndex ).length ) {
+        // possibly remove a last empty group
+        this.groups.delete( _groupIndex );
       }
-
-      this.groups.get( _groupIndex ).push( _linesAsNumbers ? parseInt( line, 10 ) : line );
-    }
-
-    if ( !this.groups.get( _groupIndex ).length ) {
-      // possibly remove a last empty group
-      this.groups.delete( _groupIndex );
     }
   }
 
-  static async init( directory, filePath, _linesAsNumbers = false ) {
+  static async init( directory, filePath, _linesAsNumbers = false, _getGroups = false ) {
     let lines;
     let data = "";
     await new Promise( ( resolve ) => {
@@ -72,7 +76,7 @@ class InputParser {
       lines = lines.map( line => line && parseInt( line, 10 ) );
     }
 
-    return new InputParser( data, lines, _linesAsNumbers );
+    return new InputParser( data, lines, _linesAsNumbers, _getGroups );
   }
 
   iterateLines( processor ) {

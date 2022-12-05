@@ -9,11 +9,7 @@ const main = async () => {
   parser.iterateLines( function( line ) {
     if ( !line ) return;
 
-    const matches = [ ...line.matchAll( /\d+/g ) ];
-    const a = parseInt( matches[ 0 ][ 0 ], 10 );
-    const b = parseInt( matches[ 1 ][ 0 ], 10 );
-    const c = parseInt( matches[ 2 ][ 0 ], 10 );
-    const d = parseInt( matches[ 3 ][ 0 ], 10 );
+    const [ a, b, c, d ] = line.match( /\d+/g ).map( Number );
 
     let boolA = false;
     let boolB = false;
