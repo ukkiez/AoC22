@@ -41,15 +41,13 @@ const main = async () => {
   for ( let i = index+1; i < lines.length-1; i++ ) {
     const [ number, from, to ] = lines[ i ].match( /\d+/g ).map( Number );
     // part 1
-    const source = stacks.get( from-1 );
-    const destination = stacks.get( to-1 );
-    for ( let n = 0; n < number; n++ ) {
-      destination.push( source.pop() );
-    }
+    const crates1 = stacks.get( from-1 ).splice( -number, number );
+    stacks.set( to-1, stacks.get( to-1 ).concat( crates1.reverse() ) );
+
 
     // part 2
-    const crates = stacks2.get( from-1 ).splice( stacks2.get( from-1 ).length - number );
-    stacks2.set( to-1, stacks2.get( to-1 ).concat( crates ) );
+    const crates2 = stacks2.get( from-1 ).splice( -number, number );
+    stacks2.set( to-1, stacks2.get( to-1 ).concat( crates2 ) );
   }
 
   for ( const value of stacks.values() ) {
