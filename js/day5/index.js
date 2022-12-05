@@ -19,10 +19,6 @@ const main = async () => {
   while ( i >= 0 ) {
     const chars = [ ...lines[ i ] ];
     for ( let l = 0; l < chars.length; l++ ) {
-      if ( chars[ l ] === " " ) {
-        continue;
-      }
-
       if ( chars[ l ] === "[" ) {
         const stackIndex = ( l / 4 );
         stacks.get( stackIndex ).push( chars[ l+1 ] );
@@ -43,7 +39,6 @@ const main = async () => {
     // part 1
     const crates1 = stacks.get( from-1 ).splice( -number, number );
     stacks.set( to-1, stacks.get( to-1 ).concat( crates1.reverse() ) );
-
 
     // part 2
     const crates2 = stacks2.get( from-1 ).splice( -number, number );
