@@ -131,17 +131,6 @@ const main = async () => {
         knots[ i ][ 1 ] += addRow;
       }
     }
-
-    // if ( Math.abs( knots[ i-1 ][ 0 ] - knots[ i ][ 0 ] ) >= 2 ) {
-    //   knots[ i ][ 0 ] = knots[ i-1 ][ 0 ] + ( knots[ i-1 ][ 0 ] >= 0 ? -1 : 1 );
-
-    //   knots[ i ][ 1 ] += ( knots[ i-1 ][ 1 ] - knots[ i ][ 1 ] );
-    // }
-    // if ( Math.abs( knots[ i-1 ][ 1 ] - knots[ i ][ 1 ] ) >= 2 ) {
-    //   knots[ i ][ 1 ] = knots[ i-1 ][ 1 ] + ( knots[ i-1 ][ 1 ] >= 0 ? -1 : 1 );
-
-    //   knots[ i ][ 0 ] += ( knots[ i-1 ][ 0 ] - knots[ i ][ 0 ] );
-    // }
   }
 
   parser.iterateLines( function( line ) {
@@ -176,39 +165,6 @@ const main = async () => {
     }
   } );
   answer2 = uniqueTailCoords.size;
-
-  // const rowLength = 40;
-  // const columnLength = 40;
-  // const startingRow = rowLength/2;
-  // const startingColumn = columnLength/2;
-  // const rows = [];
-  // for ( let y = 0; y < rowLength; y++ ) {
-  //   const columns = [];
-  //   for ( let x = 0; x < columnLength; x++ ) {
-  //     columns.push( "." );
-  //   }
-  //   rows.push( columns );
-  // }
-
-  // for ( let k = 0; k < knots.length; k++ ) {
-  //   const [ column, row ] = knots[ k ];
-  //   if ( rows[ row + startingRow ][ column + startingColumn ] === "." ) {
-  //     let point = k;
-  //     if ( k === 0 ) {
-  //       point = "H";
-  //     }
-  //     rows[ row + startingRow ][ column + startingColumn ] = point;
-  //   }
-  //   else {
-  //     break;
-  //   }
-  // }
-
-  // for ( const row of rows ) {
-  //   console.log( row.join( " " ) );
-  // }
-
-  // console.log( knots );
 
   return { answer1, answer2 };
 }
