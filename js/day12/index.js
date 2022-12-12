@@ -52,7 +52,6 @@ const main = async () => {
   let answer1 = 0;
   while ( true ) { // eslint-disable-line no-constant-condition
     if ( !queue.length ) {
-      console.log( "--- EMPTY QUEUE ---" );
       break;
     }
 
