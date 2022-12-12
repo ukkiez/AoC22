@@ -1,7 +1,6 @@
-
 const InputParser = require( "../InputParser.js" );
 
-const isPassable = ( curElevation, elevation ) => ( elevation - curElevation < 2 );
+const isPassable = ( curElevation, elevation ) => elevation && ( elevation - curElevation < 2 );
 
 const main = async () => {
   const parser = await InputParser.init( __dirname, "./input.txt" );
@@ -25,22 +24,11 @@ const main = async () => {
 
   const traverse = ( startingRow, startingColumn ) => {
     const getNeighbours = ( curElevation, row, col ) => {
-      let up = grid[ row-1 ]?.[ col ];
-      let down = grid[ row+1 ]?.[ col ];
-      let left = grid[ row ][ col-1 ];
-      let right = grid[ row ][ col+1 ];
       const _neighbours = [];
-      if ( isPassable( curElevation, up ) ) {
-        _neighbours.push( { elevation: up, row: row-1, column: col } );
-      }
-      if ( isPassable( curElevation, down ) ) {
-        _neighbours.push( { elevation: down, row: row+1, column: col } );
-      }
-      if ( isPassable( curElevation, left ) ) {
-        _neighbours.push( { elevation: left, row: row, column: col-1 } );
-      }
-      if ( isPassable( curElevation, right ) ) {
-        _neighbours.push( { elevation: right, row: row, column: col+1 } );
+      for ( const [ y, x ] of [ [ -1, 0 ], [ 1, 0 ], [ 0, -1 ], [ 0, 1 ] ] ) {
+        if ( isPassable( curElevation, grid[ row+y ]?.[ col+x ] ) ) {
+          _neighbours.push( { elevation: grid[ row+y ][ col+x ], row: row+y, column: col+x } );
+        }
       }
       return _neighbours;
     }
