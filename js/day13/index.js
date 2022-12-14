@@ -57,8 +57,8 @@ const main = async () => {
 
   parser.iterateGroups( ( group ) => {
     let [ left, right ] = group;
-    left = eval( left );
-    right = eval( right );
+    left = JSON.parse( left );
+    right = JSON.parse( right );
     let outcome = 0;
     for ( let i = 0; i < left.length; i++ ) {
       const el = left[ i ];

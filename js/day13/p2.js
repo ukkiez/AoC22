@@ -6,7 +6,7 @@ const main = async () => {
   const packets = [];
   parser.iterateLines( line => {
     if ( !line ) return;
-    packets.push( eval( line ) );
+    packets.push( JSON.parse( line ) );
   } );
   // add "divider packets"
   packets.push( [ [2] ] );
