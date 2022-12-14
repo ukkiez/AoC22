@@ -3,10 +3,14 @@ const InputParser = require( "../InputParser.js" );
 const main = async () => {
   const parser = await InputParser.init( __dirname, "./input.txt" );
 
+  // const startingSymbol = "+";
+  // const sandSymbol = "o";
+  // const rockSymbol = "#";
+  // const airSymbol = ".";
   const startingSymbol = "+";
-  const sandSymbol = "o";
-  const rockSymbol = "#";
-  const airSymbol = ".";
+  const sandSymbol = "🎲";
+  const rockSymbol = "🛹";
+  const airSymbol = " ";
 
   const grid = new Map();
   let xMax = 0;
@@ -114,7 +118,7 @@ const main = async () => {
   const visualization = [];
   for ( let y = 0; y < grid.size; y++ ) {
     visualization.push( [] );
-    for ( let x = 300; x < grid.get( y ).size; x++ ) {
+    for ( let x = 330; x < grid.get( y ).size; x++ ) {
       visualization[ y ].push( grid.get( y ).get( x ) );
     }
   }
